@@ -1,0 +1,18 @@
+extends layout
+
+block project
+    li.current
+        a(href='/projects') My Projects
+
+block timeline
+    
+
+
+block body
+    article#main
+        section(class=['wrapper','style1','container'])
+            div.row
+                section
+                    h1= message
+                    pre= error.status
+                    pre= error.stack

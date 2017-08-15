@@ -1,0 +1,84 @@
+doctype html
+//
+    Original template:
+    Twenty by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+    Restyled pages: Weili An
+html
+    block head
+        head
+            title= title
+            meta(charset='utf-8')
+            meta(name='viewport', content='width=device-width, initial-scale=1')
+            link(rel='stylesheet', href='/assets/css/main.css')
+            link(rel='shortcut icon', href='/assets/favicon.ico', type="image/x-icon")
+
+    body.index
+        #page-wrapper
+            header(id='header', class=noheader ? '' : 'alt')
+                h1#logo
+                    a(href='/')= title
+                nav#nav
+                    ul
+                        li.current
+                            a(href='#banner') Back to TOP
+                        block project
+                            li.submenu
+                                a(href='#') My Projects
+                                ul
+                                    each star in projects
+                                        li
+                                            a(href=star.url)= star.title
+                                    li
+                                        a(href="/timeline") View More
+                        block timeline
+                            li.submenu
+                                a(href='#') My Timeline
+                                ul
+                                    each year in years
+                                        li
+                                            a(href="/timeline#"+year)= year
+            block banner
+                section#banner
+                    .inner
+                        header
+                            h2 !{title}
+                        p !{description}
+                        footer
+                            ul(class=['buttons','vertical'])
+                                li
+                                    a(class=['button','fit','scrolly'] href='#main') Learn More
+            block body
+            footer#footer
+                ul.icons
+                    li
+                        a.icon.circle.fa-twitter(href='#')
+                            span.label Twitter
+                    li
+                        a.icon.circle.fa-facebook(href='#')
+                            span.label Facebook
+                    li
+                        a.icon.circle.fa-google-plus(href='#')
+                            span.label Google+
+                    li
+                        a.icon.circle.fa-github(href='#')
+                            span.label Github
+                    // <li><a href="#" class="icon circle fa-dribbble"><span class="label">Dribbble</span></a></li>
+                ul.copyright
+                    li © Yourname
+                    li
+                        | Design: 
+                        a(href='http://html5up.net') HTML5 UP
+                    li
+                        | Restyle: 
+                        a(href='/') Yourname
+        // Scripts
+        block js
+            script(src='/assets/js/jquery.min.js')
+            script(src='/assets/js/jquery.dropotron.min.js')
+            script(src='/assets/js/jquery.scrolly.min.js')
+            script(src='/assets/js/jquery.scrollgress.min.js')
+            script(src='/assets/js/skel.min.js')
+            script(src='/assets/js/util.js')
+            script(src='/assets/js/main.js')

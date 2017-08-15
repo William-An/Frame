@@ -1,0 +1,38 @@
+extends layout
+
+block project
+	li.current
+		a(href='/projects') View More
+block timeline
+
+block banner
+	
+block body
+	article#main
+		header(class=['special','container'])
+			span(class=['icon','fa-mobile'])
+			h2= project.title
+			p= project.summary
+		section(class=['wrapper','style4','container'])
+			.content
+				section
+					a(class=['image','featured'])
+						img(src=project.picurl, alt=project.title)
+					div !{project.detail}
+		section(class=['wrapper','style1','container','special'])
+			.row
+				if projects_list
+					each project in projects_list
+						div(class=['4u','12u(narrower)'])
+							section
+								a(class=['image','featured'], src=project.url)
+									img(src=project.picurl, alt=project.title)
+								header
+									h3= project.title
+								p= project.summary
+								footer
+									ul.buttons
+										li
+											a(href=project.url, class=['button','small']) Learn More
+											if project.gitrepo
+												a(href=project.gitrepo, class=['button','small','special']) Source Code
