@@ -10,6 +10,7 @@ For handling requests, Frame use [express](http://expressjs.com/) and [pug](http
 ## Preparation
 - MongDB Database
 - Nodejs
+- Packages
 - Currently need some programming experience
 
 ## Usage
