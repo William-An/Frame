@@ -1,0 +1,53 @@
+extends layout
+
+block head
+	head
+		meta(charset='UTF-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		link(href='http://fonts.googleapis.com/css?family=Droid+Serif|Open+Sans:400,700', rel='stylesheet', type='text/css')
+		link(rel='stylesheet', href='/assets/css/reset.css')
+		// CSS reset
+		link(rel='stylesheet', href='/assets/css/style.css')
+		// Resource style
+		link(rel='stylesheet', href='/assets/css/main.css')
+		script(src='/assets/js/modernizr.js')
+		// Modernizr
+		link(rel='shortcut icon', href='/assets/favicon.ico')
+		title= title
+
+block project
+	
+
+block body
+	section(id='cd-timeline' class='cd-container' name='main')
+		#main
+			-	var icon_color = ['red','green','yellow']
+			-	var icon_img = ['picture.svg','movie.svg','location.svg']
+			-	for(i in years)
+				div(id=years[i])
+					each project in project_list[years[i]]
+						-	let j = parseInt(Math.random()*3)
+						div.cd-timeline-block
+							div(class=['cd-timeline-img',icon_color[j]])
+								img(src="/images/cd-icon-"+icon_img[j])
+							div(class=['cd-timeline-content','bounce-in'])
+								h2= project.title
+								p= project.summary
+								if project.url
+									a(href=project.url,class="cd-read-more") Read More
+								span.cd-date= project.date.toDateString()
+					br
+
+block js
+	script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+	script(src='/assets/js/timeline_main.js')
+	// Resource jQuery
+	script(src='/assets/js/jquery.min.js')
+	script(src='/assets/js/jquery.dropotron.min.js')
+	script(src='/assets/js/jquery.scrolly.min.js')
+	script(src='/assets/js/jquery.scrollgress.min.js')
+	script(src='/assets/js/skel.min.js')
+	script(src='/assets/js/util.js')
+	//if lte IE 8
+	script(src='/assets/js/ie/respond.min.js')
+	script(src='/assets/js/main.js')
