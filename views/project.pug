@@ -14,11 +14,17 @@ block body
 			h2= project.title
 			p= project.summary
 		section(class=['wrapper','style4','container'])
-			.content
-				section
-					a(class=['image','featured'])
-						img(src=project.picurl, alt=project.title)
-					div !{project.detail}
+			div(class=['content','row'])
+				div(class='12u')
+					section
+						a(class=['image','featured'])
+							img(src=project.picurl, alt=project.title)
+						div !{project.detail}
+						footer
+							ul.buttons
+								if project.gitrepo
+									li
+										a(href=project.gitrepo, class=['button','small','special']) Source Code
 		section(class=['wrapper','style1','container','special'])
 			.row
 				if projects_list
