@@ -22,7 +22,7 @@ router.get('/', function(req, res, next) {
 					res.locals.title = data.title;
 					res.locals.description = data.description
 					//	For Testing
-					db.collection('Projects').find({}).toArray(function(err, data){
+					db.collection('Projects').find({}).sort({'date':-1}).toArray(function(err, data){
 						if(err){
 							console.log(err);
 							next(err);

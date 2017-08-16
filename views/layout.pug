@@ -22,7 +22,9 @@ html
                 nav#nav
                     ul
                         li.current
-                            a(href='#banner') Back to TOP
+                            a(class=['icon','fa','fa-arrow-up'] ,href='#banner')
+                        li.current
+                            a(class=['icon','fa','fa-home'] ,href='/')
                         block project
                             li.submenu
                                 a(href='#') My Projects
