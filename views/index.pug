@@ -33,9 +33,9 @@ block body
             header.major
                 h2 Checkout some of my projects!
                 div.row
-                    each star in projects
+                    each star, index in projects
                         // projects, starred
-                        div(class=['6u','12u(narrower)'])
+                        div(class=[index % 2? '6u$' : '6u','12u(narrower)'])
                             section
                                 a(class=['image','featured'] href=star.url)
                                     img(src=star.picurl||"/images/pic01.jpg" alt=star.picalt?star.picalt:'A simple picture')
