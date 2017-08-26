@@ -2,7 +2,7 @@
 var express = require('express');
 var router = express.Router();
 var database = require('mongodb').MongoClient;
-var mongourl = /* Your MongDB URL */
+var mongourl = '';/* Your MongDB URL */
 
 /* GET home page. */
 router.get('/', function(req, res, next) {

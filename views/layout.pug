@@ -8,7 +8,7 @@ doctype html
 html
     block head
         head
-            title= title
+            title= title || 'Frame, a Project displayer'
             meta(charset='utf-8')
             meta(name='viewport', content='width=device-width, initial-scale=1')
             link(rel='stylesheet', href='/assets/css/main.css')
@@ -18,7 +18,7 @@ html
         #page-wrapper
             header(id='header', class=noheader ? '' : 'alt')
                 h1#logo
-                    a(href='/')= title
+                    a(href='/')= title || 'Frame'
                 nav#nav
                     ul
                         li.current
