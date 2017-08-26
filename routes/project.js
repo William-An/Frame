@@ -26,7 +26,7 @@ router.get('/:name',function(req, res, next){
 					res.locals.project = data;
 					//	Only 3 random projects, nearest in time
 					try{
-						db.collection('Projects').find({date:{$gte:data.date}}).limit(3).toArray(function(err, data){
+						db.collection('Projects').find({$or:[{date:{$gt:data.date}},{date:{$lt:data.date}}]}).limit(3).toArray(function(err, data){
 							res.locals.projects_list = data;
 							res.locals.noheader = true;
 							res.render('project');
